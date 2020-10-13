@@ -1,0 +1,31 @@
+<h1>All posts</h1>
+
+<div class="row my-3">
+  <div class="col-2 ml-auto">
+    <a routerLink="/posts/add" class="btn btn-primary">+ Add Post</a>
+  </div>
+</div>
+
+<div *ngIf="posts">
+
+
+  <table class="table table-bordered">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th width="220px">Action</th>
+    </tr>
+    <tr *ngFor="let post of posts, index as postId" >
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.body }}</td>
+      <td>
+        <a href="#" [routerLink]="['/posts', post.id]" class="btn btn-info">View</a>
+        <a href="#" [routerLink]="['/post/', post.id, 'edit']" class="btn btn-primary">Edit</a>
+        <button type="button" (click)="deletePost(post.id)" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </table>
+  
+</div>
