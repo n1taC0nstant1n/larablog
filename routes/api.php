@@ -18,5 +18,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 // Route::resource('apipost', 'API\PostAPIController');
-Route::get('/apipost','API\PostAPIController@index')->middleware("cors");
+Route::resource('apiposts','API\PostAPIController');
 

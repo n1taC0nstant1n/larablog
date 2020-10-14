@@ -17,7 +17,7 @@ export class EditComponent implements OnInit {
   });
 
   id: number;
-  post: Post;
+  post: Post = {  id: 0, title: '', body: '' };
 
 
   constructor(
